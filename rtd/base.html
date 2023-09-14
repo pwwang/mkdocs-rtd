@@ -79,7 +79,16 @@
 </head>
 
 <body class="wy-body-for-nav" role="document">
-
+  <div class="wy-social">
+  {%- if config.repo_url -%}
+    <div class="github_repo">
+      <a href="{{ config.repo_url }}" target="_blank">
+        <!-- Icon from https://www.iconfinder.com/search?q=github&category=social-media -->
+        <img src="{{ 'github_icon.png' | url }}" alt="GitHub repo" />
+      </a>
+    </div>
+  {%- endif -%}
+  </div>
   <div class="wy-grid-for-nav">
 
     {#- SIDE NAV, TOGGLES ON MOBILE #}

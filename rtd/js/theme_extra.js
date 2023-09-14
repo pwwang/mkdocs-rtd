@@ -5,6 +5,10 @@
  * https://github.com/mkdocs/mkdocs/issues/2028
  */
 (function($) {
+    $('div.wy-social').css(
+        'left',
+        parseInt($("nav.wy-nav-side").outerWidth() + $("div.wy-nav-content").outerWidth()) + 'px'
+    );
     $('div.rst-content table').addClass('docutils');
     $('div.wy-side-scroll li.toctree-l1').on('click', '>a:has(button)', function(e) {
         let $button = $(this).children('button');
@@ -12,6 +16,7 @@
             $button.click();
         }
     });
+    $('.rst-content a[href^="http"]').attr('target', '_blank');
 
     const $current = $('li.current,a.current');
     if ($current.length > 0) {
