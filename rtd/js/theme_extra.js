@@ -9,6 +9,11 @@
         'left',
         parseInt($("nav.wy-nav-side").outerWidth() + $("div.wy-nav-content").outerWidth()) + 'px'
     );
+    $('div.wy-menu.wy-menu-vertical').css(
+        'margin-top',
+        $('div.wy-side-nav-search').outerHeight() + 16 + 'px'
+    );
+
     $('div.rst-content table').addClass('docutils');
     $('div.wy-side-scroll li.toctree-l1').on('click', '>a:has(button)', function(e) {
         let $button = $(this).children('button');
