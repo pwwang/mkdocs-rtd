@@ -21,3 +21,11 @@ theme:
 
 All options are the same when using the original theme (`readthedocs`). See also:
 <https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs>
+
+## Modifications
+
+- Add social icons (only Github supported now) to the top right corner of the page.
+- Adjust some styles
+- Open external links in new tab by default
+- Do not reset side nav items when url hash is `#` or empty
+- Make search box sticky
