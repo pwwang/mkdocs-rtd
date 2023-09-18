@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mkdocs-rtd"
-version = "0.0.1"
+version = "0.0.2"
 description = "A fork of mkdocs readthedocs theme to make it work with mkapi"
 authors = ["pwwang <pwwang@pwwang.com>"]
 license = "MIT"
