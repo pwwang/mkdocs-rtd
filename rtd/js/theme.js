@@ -155,26 +155,26 @@
                 ))
             },
             reset: function() {
-                var n = encodeURI(window.location.hash) || "#";
-                if (n === "#") {return;}
-                try {
-                    var e = $(".wy-menu-vertical")
-                      , t = e.find('[href="' + n + '"]');
-                    if (0 === t.length) {
-                        var i = $('.document [id="' + n.substring(1) + '"]').closest("div.section");
-                        0 === (t = e.find('[href="#' + i.attr("id") + '"]')).length && (t = e.find('[href="#"]'))
-                    }
-                    if (t.length > 0) {
-                        $(".wy-menu-vertical .current").removeClass("current").attr("aria-expanded", "false"),
-                        t.addClass("current").attr("aria-expanded", "true"),
-                        t.closest("li.toctree-l1").parent().addClass("current").attr("aria-expanded", "true");
-                        for (let n = 1; n <= 10; n++)
-                            t.closest("li.toctree-l" + n).addClass("current").attr("aria-expanded", "true");
-                        t[0].scrollIntoView()
-                    }
-                } catch (n) {
-                    console.log("Error expanding nav for anchor", n)
-                }
+                // var n = encodeURI(window.location.hash) || "#";
+                // if (n === "#") {return;}
+                // try {
+                //     var e = $(".wy-menu-vertical")
+                //       , t = e.find('[href="' + n + '"]');
+                //     if (0 === t.length) {
+                //         var i = $('.document [id="' + n.substring(1) + '"]').closest("div.section");
+                //         0 === (t = e.find('[href="#' + i.attr("id") + '"]')).length && (t = e.find('[href="#"]'))
+                //     }
+                //     if (t.length > 0) {
+                //         $(".wy-menu-vertical .current").removeClass("current").attr("aria-expanded", "false"),
+                //         t.addClass("current").attr("aria-expanded", "true"),
+                //         t.closest("li.toctree-l1").parent().addClass("current").attr("aria-expanded", "true");
+                //         for (let n = 1; n <= 10; n++)
+                //             t.closest("li.toctree-l" + n).addClass("current").attr("aria-expanded", "true");
+                //         t[0].scrollIntoView()
+                //     }
+                // } catch (n) {
+                //     console.log("Error expanding nav for anchor", n)
+                // }
             },
             onScroll: function() {
                 this.winScroll = !1;

@@ -249,34 +249,6 @@ div.document ul {
     padding: .75em 1.25em !important;
 }
 
-:root {
-    --mkapi-node-border: #559bc9;
-    --mkapi-node-background: #f0f6fa;
-    --mkapi-object-container-background: #b4d4e9;
-    --mkapi-item-name: #555;
-    --mkapi-section-name: #333;
-    --mkapi-package: #111;
-    --mkapi-module: #222;
-    --mkapi-code-bg: #f0f6fa;
-    --mkapi-example-bg: #eee;
-    --mkapi-object-sig: #2980B9;
-    --mkapi-type: #8888EE;
-}
-
-body[data-md-color-scheme="slate"] {
-    --mkapi-node-border: #5768c3;
-    --mkapi-node-background: #555f66;
-    --mkapi-object-container-background: #445288;
-    --mkapi-item-name: #d9e1e9;
-    --mkapi-section-name: #e4e4e4;
-    --mkapi-package: #fff;
-    --mkapi-module: #eee;
-    --mkapi-code-bg: #445288;
-    --mkapi-example-bg: #3a3a3a;
-    --mkapi-object-sig: #a3c3f3;
-    --mkapi-type: #c5c5ee;
-}
-
 .md-typeset code {
     background-color: var(--mkapi-code-bg);
 }
@@ -287,4 +259,10 @@ body[data-md-color-scheme="slate"] {
 .md-typeset pre>code {
     overflow: visible;
     line-height: 1.2;
+}
+
+@media screen and (max-width: 768px) {
+    nav.wy-nav-side.shift .wy-side-nav-search {
+        width: 85%;
+    }
 }
