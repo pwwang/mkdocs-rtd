@@ -50,9 +50,11 @@
 a code {
     color: #2980B9;
 }
+
 a:hover code {
     color: #3091d1;
 }
+
 a:visited code {
     color: #9B59B6;
 }
@@ -64,7 +66,8 @@ a:visited code {
  *
  * https://github.com/mkdocs/mkdocs/issues/411
  */
-pre .cs, pre .c {
+pre .cs,
+pre .c {
     font-weight: inherit;
     font-style: inherit;
 }
@@ -103,7 +106,8 @@ pre .cs, pre .c {
 form .search-query {
     width: 100%;
     border-radius: 50px;
-    padding: 6px 12px;  /* csslint allow: box-model */
+    padding: 6px 12px;
+    /* csslint allow: box-model */
     border-color: #D1D4D5;
 }
 
@@ -112,7 +116,7 @@ form .search-query {
  *
  * https://github.com/mkdocs/mkdocs/issues/656
  */
- .rst-content .admonition code {
+.rst-content .admonition code {
     color: #404040;
     border: 1px solid #c7c9cb;
     border: 1px solid rgba(0, 0, 0, 0.2);
@@ -134,8 +138,10 @@ form .search-query {
     border: none;
 }
 
-td, th {
-    border: 1px solid #e1e4e5 !important; /* csslint allow: important */
+td,
+th {
+    border: 1px solid #e1e4e5 !important;
+    /* csslint allow: important */
     border-collapse: collapse;
 }
 
@@ -151,7 +157,7 @@ td, th {
  *
  * https://github.com/mkdocs/mkdocs/issues/2012
  */
- .wy-nav-side {
+.wy-nav-side {
     padding-bottom: 40px;
 }
 
@@ -201,43 +207,55 @@ td, th {
     flex: 1;
     text-align: center;
 }
+
 .rst-content div[class^=highlight] pre {
     padding: 0 !important;
 }
+
 div.wy-side-scroll div.wy-side-nav-search {
     position: fixed;
 }
+
 div.wy-side-scroll div.wy-menu.wy-menu-vertical {
     margin-top: 7rem;
     margin-bottom: 1rem;
 }
-div.wy-side-scroll p.caption + ul > li > a::before {
+
+div.wy-side-scroll p.caption+ul>li>a::before {
     content: "▪";
     padding-right: 0.5rem;
 }
-div.wy-side-scroll p.caption + ul > li > a.current,
-div.wy-side-scroll p.caption + ul > li.current > a {
+
+div.wy-side-scroll p.caption+ul>li>a.current,
+div.wy-side-scroll p.caption+ul>li.current>a {
     padding-left: 2.375rem;
 }
-div.wy-side-scroll p.caption + ul > li > a.current::before,
-div.wy-side-scroll p.caption + ul > li.current > a::before {
+
+div.wy-side-scroll p.caption+ul>li>a.current::before,
+div.wy-side-scroll p.caption+ul>li.current>a::before {
     display: none;
 }
-div.wy-side-scroll p.caption + ul > li > a > button {
+
+div.wy-side-scroll p.caption+ul>li>a>button {
     display: none;
 }
-div.wy-side-scroll p.caption + ul li.toctree-l2 {
+
+div.wy-side-scroll p.caption+ul li.toctree-l2 {
     padding-left: .75rem;
 }
+
 div.wy-social {
     position: fixed;
     top: 1rem;
     z-index: 999;
 }
+
 div.document ul {
     margin-top: 2px !important;
 }
-.md-typeset .admonition, .md-typeset details {
+
+.md-typeset .admonition,
+.md-typeset details {
     font-size: .7rem !important;
 }
 
@@ -252,10 +270,12 @@ div.document ul {
 .md-typeset code {
     background-color: var(--mkapi-code-bg);
 }
+
 .md-typeset {
     font-size: .75rem !important;
     line-height: 1.5 !important;
 }
+
 .md-typeset pre>code {
     overflow: visible;
     line-height: 1.2;
@@ -264,5 +284,144 @@ div.document ul {
 @media screen and (max-width: 768px) {
     nav.wy-nav-side.shift .wy-side-nav-search {
         width: 85%;
+    }
+}
+
+/** markdown tabs: pymdownx.blocks.tab **/
+.tabbed-alternate {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 1rem 0;
+    border-radius: 0.1rem;
+}
+
+.tabbed-alternate>input {
+    display: none;
+}
+
+.tabbed-labels {
+    display: flex;
+    width: 100%;
+    overflow: auto;
+    box-shadow: 0 -0.1rem #5ab0de inset;
+    scrollbar-width: none;
+}
+
+.tabbed-labels::-webkit-scrollbar {
+    display: none;
+}
+
+.tabbed-labels>label {
+    width: auto;
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    border-bottom: 0.1rem solid transparent;
+    scroll-snap-align: start;
+    border-top-left-radius: 0.1rem;
+    border-top-right-radius: 0.1rem;
+    cursor: pointer;
+    transition: background-color 250ms, color 250ms;
+    margin-bottom: 0;
+}
+
+.tabbed-labels>label:hover {
+    color: #6ab0de;
+}
+
+.tabbed-labels.tabbed-scroll-left::before {
+    display: inline-block;
+    font-size: 0.9em;
+    position: absolute;
+    top: 0.75em;
+    left: 0;
+    padding-right: 0.64em;
+    color: gray;
+    background: linear-gradient(to right, rgb(255, 255, 255) 75%, rgba(255, 255, 255, 0));
+    content: "\25C0";
+    cursor: pointer;
+}
+
+.tabbed-labels.tabbed-scroll-right::after {
+    display: inline-block;
+    font-size: 0.9em;
+    position: absolute;
+    top: 0.75em;
+    right: 0;
+    padding-left: 0.64em;
+    color: gray;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(255, 255, 255) 25%);
+    content: "\25B6";
+    cursor: pointer;
+}
+
+.tabbed-alternate .tabbed-content {
+    width: 100%;
+    background-color: #e7f2fa;
+    padding: 1rem;
+}
+
+.tabbed-alternate input:nth-child(1):checked~.tabbed-content> :nth-child(1),
+.tabbed-alternate input:nth-child(2):checked~.tabbed-content> :nth-child(2),
+.tabbed-alternate input:nth-child(3):checked~.tabbed-content> :nth-child(3) {
+    display: block;
+}
+
+.tabbed-alternate .tabbed-block {
+    display: none;
+}
+
+.tabbed-alternate .tabbed-block>div[class^=highlight]:last-child {
+    margin-bottom: .5rem;
+}
+
+@media screen {
+
+    .tabbed-alternate input:nth-child(1):checked~.tabbed-labels> :nth-child(1),
+    .tabbed-alternate input:nth-child(2):checked~.tabbed-labels> :nth-child(2),
+    .tabbed-alternate input:nth-child(3):checked~.tabbed-labels> :nth-child(3) {
+        color: white;
+        background-color: #6ab0de;
+    }
+}
+
+@media print {
+    .tabbed-labels {
+        display: contents;
+    }
+
+    .tabbed-labels>label:nth-child(1) {
+        order: 1;
+    }
+
+    .tabbed-labels>label:nth-child(2) {
+        order: 2;
+    }
+
+    .tabbed-labels>label:nth-child(3) {
+        order: 3;
+    }
+
+    .tabbed-alternate .tabbed-content {
+        display: contents;
+    }
+
+    .tabbed-alternate .tabbed-block {
+        display: block;
+    }
+
+    .tabbed-alternate .tabbed-block:nth-child(1) {
+        order: 1;
+    }
+
+    .tabbed-alternate .tabbed-block:nth-child(2) {
+        order: 2;
+    }
+
+    .tabbed-alternate .tabbed-block:nth-child(3) {
+        order: 3;
     }
 }

@@ -29,3 +29,4 @@ All options are the same when using the original theme (`readthedocs`). See also
 - Open external links in new tab by default
 - Do not reset side nav items when url hash is `#` or empty
 - Make search box sticky
+- Add css support for `pymdownx.blocks.tab` (must use `alternate_style: true`)
