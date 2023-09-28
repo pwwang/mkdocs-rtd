@@ -5,7 +5,7 @@
  * https://github.com/mkdocs/mkdocs/issues/2028
  */
 (function($) {
-    const searchBoxHeight = $('div.wy-side-nav-search').outerHeight() + 16;
+    const searchBoxHeight = $('div.wy-side-nav-search').outerHeight(true);
     $('div.wy-social').css(
         'left',
         parseInt($("nav.wy-nav-side").outerWidth() + $("div.wy-nav-content").outerWidth()) + 'px'

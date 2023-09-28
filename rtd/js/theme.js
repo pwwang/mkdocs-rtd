@@ -122,6 +122,8 @@
                 n(document);
                 var e = this;
                 this.navBar = n("div.wy-side-scroll:first"),
+                this.searchBarHeight = this.navBar.find(".wy-side-nav-search").outerHeight(true),
+                this.currentItem = this.navBar.find("ul.current:first"),
                 this.win = n(window),
                 n(document).on("click", "[data-toggle='wy-nav-top']", (function() {
                     n("[data-toggle='wy-nav-shift']").toggleClass("shift"),
@@ -178,11 +180,19 @@
             },
             onScroll: function() {
                 this.winScroll = !1;
+                if (this.navBar.is(":hover")) {
+                    return;
+                }
                 var n = this.win.scrollTop()
-                  , e = n + this.winHeight
-                  , t = this.navBar.scrollTop() + (n - this.winPosition);
-                n < 0 || e > this.docHeight || (this.navBar.scrollTop(t),
-                this.winPosition = n)
+                , e = n + this.winHeight
+                , t = Math.min(
+                    this.navBar.scrollTop() + (n - this.winPosition),
+                    this.navBar.scrollTop() + this.currentItem.position().top - this.searchBarHeight
+                );
+                if (n >= 0 && e <= this.docHeight) {
+                    this.navBar.scrollTop(t);
+                    this.winPosition = n;
+                }
             },
             onResize: function() {
                 this.winResize = !1,
