@@ -30,3 +30,4 @@ All options are the same when using the original theme (`readthedocs`). See also
 - Do not reset side nav items when url hash is `#` or empty
 - Make search box sticky
 - Add css support for `pymdownx.blocks.tab` (must use `alternate_style: true`)
+- Set `ignoreUnescapedHTML` to `true` for `hljs`

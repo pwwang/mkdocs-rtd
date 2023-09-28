@@ -47,7 +47,7 @@
       {%- for lang in config.theme.hljs_languages %}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/{{lang}}.min.js"></script>
       {%- endfor %}
-      <script>hljs.highlightAll();</script>
+      <script>hljs.configure({ ignoreUnescapedHTML: true }); hljs.highlightAll();</script>
     {%- endif %}
   {%- endblock %}
 
