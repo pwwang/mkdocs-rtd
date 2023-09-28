@@ -31,3 +31,4 @@ All options are the same when using the original theme (`readthedocs`). See also
 - Make search box sticky
 - Add css support for `pymdownx.blocks.tab` (must use `alternate_style: true`)
 - Set `ignoreUnescapedHTML` to `true` for `hljs`
+- Keep current sidebar item always in view when scrolling
