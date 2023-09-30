@@ -374,6 +374,12 @@ div.document ul {
     display: none;
 }
 
+
+.tabbed-alternate .tabbed-block .admonition {
+    filter: drop-shadow(1px 1px 1px #5187ae);
+    border-left: 1px solid #ddd;
+}
+
 .tabbed-alternate .tabbed-block>div[class^=highlight]:last-child {
     margin-bottom: .5rem;
 }
