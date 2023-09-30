@@ -22,5 +22,7 @@
     $('.rst-content a[href^="http"]').attr('target', '_blank');
 
     const $current = $('li.current,a.current').eq(0);
-    $("div.wy-side-scroll").scrollTop($current.position().top - searchBoxHeight);
+    if ($current.length > 0) {
+        $("div.wy-side-scroll").scrollTop($current.position().top - searchBoxHeight);
+    }
 })(jQuery);
