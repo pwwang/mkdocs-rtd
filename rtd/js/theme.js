@@ -180,7 +180,7 @@
             },
             onScroll: function() {
                 this.winScroll = !1;
-                if (this.navBar.is(":hover")) {
+                if (this.navBar.is(":hover") || this.currentItem.length == 0) {
                     return;
                 }
                 var n = this.win.scrollTop()
