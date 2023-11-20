@@ -11,7 +11,10 @@
         parseInt($("nav.wy-nav-side").outerWidth() + $("div.wy-nav-content").outerWidth()) + 'px'
     );
 
-    $('div.wy-menu.wy-menu-vertical').css('margin-top', searchBoxHeight + 'px');
+    $('div.nav-scrollable-wrapper').css({
+        'margin-top': searchBoxHeight + 'px',
+        'height': 'calc(100vh - ' + (searchBoxHeight + 40) + 'px)'
+    });
     $('div.rst-content table').addClass('docutils');
     $('div.wy-side-scroll li.toctree-l1').on('click', '>a:has(button)', function(e) {
         let $button = $(this).children('button');
@@ -23,6 +26,10 @@
 
     const $current = $('li.current,a.current').eq(0);
     if ($current.length > 0) {
-        $("div.wy-side-scroll").scrollTop($current.position().top - searchBoxHeight);
+        requestAnimationFrame(() => {
+            $("div.nav-scrollable-wrapper").animate({
+                scrollTop: $current.position().top - searchBoxHeight
+            }, 750);
+        });
     }
 })(jQuery);

@@ -93,16 +93,16 @@
                 t.isRunning || (t.isRunning = !0,
                 e((function(e) {
                     t.init(e),
-                    t.reset(),
-                    t.win.on("hashchange", t.reset),
-                    n && t.win.on("scroll", (function() {
-                        t.linkScroll || t.winScroll || (t.winScroll = !0,
-                        requestAnimationFrame((function() {
-                            t.onScroll()
-                        }
-                        )))
-                    }
-                    )),
+                    // t.reset(),
+                    // t.win.on("hashchange", t.reset),
+                    // n && t.win.on("scroll", (function() {
+                    //     t.linkScroll || t.winScroll || (t.winScroll = !0,
+                    //     requestAnimationFrame((function() {
+                    //         t.onScroll()
+                    //     }
+                    //     )))
+                    // }
+                    // )),
                     t.win.on("resize", (function() {
                         t.winResize || (t.winResize = !0,
                         requestAnimationFrame((function() {
@@ -121,8 +121,9 @@
             init: function(n) {
                 n(document);
                 var e = this;
-                this.navBar = n("div.wy-side-scroll:first"),
-                this.searchBarHeight = this.navBar.find(".wy-side-nav-search").outerHeight(true),
+                this.navBar = n("div.nav-scrollable-wrapper"),
+                this.menuWrap = this.navBar.find(".wy-menu-vertical"),
+                this.searchBarHeight = this.navBar.prev(".wy-side-nav-search").outerHeight(true),
                 this.currentItem = this.navBar.find("ul.current:first"),
                 this.win = n(window),
                 n(document).on("click", "[data-toggle='wy-nav-top']", (function() {
@@ -178,22 +179,23 @@
                 //     console.log("Error expanding nav for anchor", n)
                 // }
             },
-            onScroll: function() {
-                this.winScroll = !1;
-                if (this.navBar.is(":hover") || this.currentItem.length == 0) {
-                    return;
-                }
-                var n = this.win.scrollTop()
-                , e = n + this.winHeight
-                , t = Math.min(
-                    this.navBar.scrollTop() + (n - this.winPosition),
-                    this.navBar.scrollTop() + this.currentItem.position().top - this.searchBarHeight
-                );
-                if (n >= 0 && e <= this.docHeight) {
-                    this.navBar.scrollTop(t);
-                    this.winPosition = n;
-                }
-            },
+            // onScroll: function() {
+            //     this.winScroll = !1;
+            //     if (this.navBar.is(":hover") || this.currentItem.length == 0) {
+            //         return;
+            //     }
+            //     var n = this.win.scrollTop()
+            //     , e = n + this.winHeight
+            //     , t = Math.min(
+            //         n,
+            //         this.currentItem.position().top - this.menuWrap.position().top
+            //     );
+            //     window.obj = this;
+            //     if (n >= 0 && e <= this.docHeight) {
+            //         this.navBar.scrollTop(t);
+            //         this.winPosition = n;
+            //     }
+            // },
             onResize: function() {
                 this.winResize = !1,
                 this.winHeight = this.win.height(),
