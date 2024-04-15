@@ -57,10 +57,13 @@ mike-test:
 	@ln -s 0.0.1 mike-site/latest
 	@echo "- Making a symlink for dev version"
 	@cp -r ./site/ mike-site/dev
+	@sed -i 's/..VERSION../dev/g' mike-site/dev/index.html
 	@echo "- Making a symlink for 0.0.1 version"
 	@cp -r ./site/ mike-site/0.0.1
+	@sed -i 's/..VERSION../0.0.1/g' mike-site/0.0.1/index.html
 	@echo "- Making a symlink for 0.0.2 version"
 	@cp -r ./site/ mike-site/0.0.2
+	@sed -i 's/..VERSION../0.0.2/g' mike-site/0.0.2/index.html
 	@echo "- Done. Serve mike-site with a static server"
 
 .PHONY: mike-test
