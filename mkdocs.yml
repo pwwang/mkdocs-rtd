@@ -1,0 +1,30 @@
+site_name: mkdocs-rtd
+edit_uri: blob/master/docs/
+repo_url: https://github.com/pwwang/mkdocs-rtd
+repo_name: pwwang/mkdocs-rtd
+theme:
+    name: 'rtd'
+markdown_extensions:
+    - attr_list
+    - pymdownx.blocks.admonition
+    - pymdownx.blocks.details
+    - pymdownx.blocks.tab:
+        alternate_style: true
+    - pymdownx.superfences:
+        preserve_tabs: true
+    - toc:
+        baselevel: 2
+        permalink: true
+plugins:
+    - search # necessary for search to work
+    - mike
+extra_css:
+    - assets/style.css
+extra_javascript:
+    - assets/script.js
+nav:
+    - 'Home': 'index.md'
+    - 'Introduction': 'introduction.md'
+    - 'Installation': 'installation.md'
+    - 'Geting started': 'getting-started.md'
+    - 'Change log': 'CHANGELOG.md'
