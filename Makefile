@@ -56,11 +56,11 @@ mike-test:
 	@echo "- Making a symlink for latest version"
 	@ln -s 0.0.1 mike-site/latest
 	@echo "- Making a symlink for dev version"
-	@ln -s ../site/ mike-site/dev
+	@cp -r ./site/ mike-site/dev
 	@echo "- Making a symlink for 0.0.1 version"
-	@ln -s ../site/ mike-site/0.0.1
+	@cp -r ./site/ mike-site/0.0.1
 	@echo "- Making a symlink for 0.0.2 version"
-	@ln -s ../site/ mike-site/0.0.2
+	@cp -r ./site/ mike-site/0.0.2
 	@echo "- Done. Serve mike-site with a static server"
 
 .PHONY: mike-test

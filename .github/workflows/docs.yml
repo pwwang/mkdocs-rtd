@@ -21,6 +21,13 @@ jobs:
           python -m pip install poetry
           poetry config virtualenvs.create false
           poetry install --with docs -v
-      - name: Build and deploy docs
+      - name: Build docs
         run: make
         if: success()
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: mike-site
+          branch: gh-pages
+          token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
